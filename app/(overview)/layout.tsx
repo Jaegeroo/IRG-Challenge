@@ -7,8 +7,16 @@ import { ConsultantStoreProvider } from "@/context/consultant/provider";
 import { ClientStoreProvider } from "@/context/client/provider";
 import { ProjectStoreProvider } from "@/context/project/provider";
 import { AllocationStoreProvider } from "@/context/allocation/provider";
+import { useUserStore } from "@/context/user/hook";
+import { useEffect } from "react";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
+  const { fetchUserData } = useUserStore((state) => state);
+
+  useEffect(() => {
+    fetchUserData();
+  }, [fetchUserData]);
+
   return (
     <AllocationStoreProvider>
       <ProjectStoreProvider>

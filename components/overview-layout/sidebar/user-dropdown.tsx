@@ -18,10 +18,11 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { EllipsisVertical, LogOut } from "lucide-react";
 import { signout } from "@/actions/auth";
+import { useUserStore } from "@/context/user/hook";
 
 export default function UserDropdown() {
   const { isMobile } = useSidebar();
-  const email = "";
+  const { email } = useUserStore((state) => state);
 
   return (
     <SidebarMenu className="border rounded-md">

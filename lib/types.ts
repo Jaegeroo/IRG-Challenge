@@ -67,3 +67,7 @@ export type ProjectStoreT = BaseStoreT<ProjectsT>;
 export type AllocationStateT = BaseStateT<AllocationsT>;
 export type AllocationStateActionsT = BaseStateActionsT<AllocationsT>;
 export type AllocationStoreT = BaseStoreT<AllocationsT>;
+
+export type UserStateT = { id: string; email: string };
+export type UserStateActionsT = { fetchUserData: () => void };
+export type UserStoreT = UserStateT & UserStateActionsT;
