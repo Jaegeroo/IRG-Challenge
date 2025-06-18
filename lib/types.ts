@@ -9,6 +9,7 @@ export type DashboardDataT = {
   rev: number;
   profit: number;
 };
+
 // -------- Generic Store Types -------- //
 export type BaseStateT<T> = {
   has_more: boolean;
@@ -29,10 +30,15 @@ export type BaseStateActionsT<T> = {
 };
 export type BaseStoreT<T> = BaseStateT<T> & BaseStateActionsT<T>;
 
-// -------- Entity Types -------- //
+// -------- Supabase Types -------- //
 export type ConsultantsT = Tables<"consultants">;
+export type ClientsT = Tables<"clients">;
 
 // -------- Store Types -------- //
 export type ConsultantStateT = BaseStateT<ConsultantsT>;
 export type ConsultantStateActionsT = BaseStateActionsT<ConsultantsT>;
 export type ConsultantStoreT = BaseStoreT<ConsultantsT>;
+
+export type ClientStateT = BaseStateT<ClientsT>;
+export type ClientStateActionsT = BaseStateActionsT<ClientsT>;
+export type ClientStoreT = BaseStoreT<ClientsT>;
