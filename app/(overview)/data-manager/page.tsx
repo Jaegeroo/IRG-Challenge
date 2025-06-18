@@ -1,3 +1,4 @@
+import ConsultantTable from "@/components/data-manager/consultants/consultant-table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function ConsultantPage() {
@@ -9,7 +10,9 @@ export default function ConsultantPage() {
           <TabsTrigger value="client-and-project">Client & Project</TabsTrigger>
           <TabsTrigger value="allocation">Allocation</TabsTrigger>
         </TabsList>
-        <TabsContent value="consultant">Consultant Table</TabsContent>
+        <TabsContent value="consultant">
+          <ConsultantTable />
+        </TabsContent>
         <TabsContent value="client-and-project">
           Client and Project Table
         </TabsContent>
