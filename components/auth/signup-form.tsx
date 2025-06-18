@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { signup } from "@/actions/auth";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 
@@ -19,13 +21,29 @@ export default function SignupForm() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
-    // add logic
+    // Add password confirmation validation
+    if (form.password !== form.confirm_password) {
+      setError("Passwords do not match");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const { error, message } = await signup(form.email, form.password);
+      if (error) setError(message || "An error occurred");
+      router.push("/");
+    } catch (err) {
+      setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
