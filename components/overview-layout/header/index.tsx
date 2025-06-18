@@ -1,7 +1,7 @@
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
 import PageTitle from "./page-title";
-// import ThemeToggler from "../themes/theme-toggler";
+import ThemeToggler from "@/components/theme/theme-toggler";
 
 export default function Header() {
   return (
@@ -15,7 +15,7 @@ export default function Header() {
           />
           <PageTitle />
         </div>
-        {/* <ThemeToggler /> */}
+        <ThemeToggler />
       </div>
     </header>
   );
