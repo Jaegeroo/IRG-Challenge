@@ -1,5 +1,6 @@
 import ClientTable from "@/components/data-manager/clients/client-table";
 import ConsultantTable from "@/components/data-manager/consultants/consultant-table";
+import ProjectTable from "@/components/data-manager/projects/projects-table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function ConsultantPage() {
@@ -19,7 +20,7 @@ export default function ConsultantPage() {
           className="grid grid-cols-1 sm:grid-cols-2 gap-2"
         >
           <ClientTable />
-          <ClientTable />
+          <ProjectTable />
         </TabsContent>
         <TabsContent value="allocation">Allocation Table</TabsContent>
       </Tabs>

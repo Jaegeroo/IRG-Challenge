@@ -33,6 +33,14 @@ export type BaseStoreT<T> = BaseStateT<T> & BaseStateActionsT<T>;
 // -------- Supabase Types -------- //
 export type ConsultantsT = Tables<"consultants">;
 export type ClientsT = Tables<"clients">;
+export type ProjectsT = {
+  billing_model: "Flat" | "Hourly";
+  client: ClientsT;
+  created_at: string;
+  flat_fee: number | null;
+  id: string;
+  name: string;
+};
 
 // -------- Store Types -------- //
 export type ConsultantStateT = BaseStateT<ConsultantsT>;
@@ -42,3 +50,7 @@ export type ConsultantStoreT = BaseStoreT<ConsultantsT>;
 export type ClientStateT = BaseStateT<ClientsT>;
 export type ClientStateActionsT = BaseStateActionsT<ClientsT>;
 export type ClientStoreT = BaseStoreT<ClientsT>;
+
+export type ProjectStateT = BaseStateT<ProjectsT>;
+export type ProjectStateActionsT = BaseStateActionsT<ProjectsT>;
+export type ProjectStoreT = BaseStoreT<ProjectsT>;
