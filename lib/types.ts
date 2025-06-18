@@ -41,6 +41,15 @@ export type ProjectsT = {
   id: string;
   name: string;
 };
+export type AllocationsT = {
+  id: string;
+  consultant: ConsultantsT;
+  project: ProjectsT;
+  hours_per_week: number;
+  start_date: string;
+  end_date: string;
+  created_at: string;
+};
 
 // -------- Store Types -------- //
 export type ConsultantStateT = BaseStateT<ConsultantsT>;
@@ -54,3 +63,7 @@ export type ClientStoreT = BaseStoreT<ClientsT>;
 export type ProjectStateT = BaseStateT<ProjectsT>;
 export type ProjectStateActionsT = BaseStateActionsT<ProjectsT>;
 export type ProjectStoreT = BaseStoreT<ProjectsT>;
+
+export type AllocationStateT = BaseStateT<AllocationsT>;
+export type AllocationStateActionsT = BaseStateActionsT<AllocationsT>;
+export type AllocationStoreT = BaseStoreT<AllocationsT>;

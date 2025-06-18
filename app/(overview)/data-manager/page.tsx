@@ -1,3 +1,4 @@
+import AllocationTable from "@/components/data-manager/allocation/allocation-table";
 import ClientTable from "@/components/data-manager/clients/client-table";
 import ConsultantTable from "@/components/data-manager/consultants/consultant-table";
 import ProjectTable from "@/components/data-manager/projects/projects-table";
@@ -22,7 +23,9 @@ export default function ConsultantPage() {
           <ClientTable />
           <ProjectTable />
         </TabsContent>
-        <TabsContent value="allocation">Allocation Table</TabsContent>
+        <TabsContent value="allocation">
+          <AllocationTable />
+        </TabsContent>
       </Tabs>
     </div>
   );
